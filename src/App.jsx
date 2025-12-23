@@ -1,21 +1,48 @@
-import { Button , } from "@/components/ui/Button"
-import { Card } from "./components/ui/card"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import ProtectedRoute from "@/middleware/ProtectedRoute";
+import Login from "@/pages/auth/Login";
+import Register from "@/pages/auth/Register";
+import Rewards from "@/pages/rewards/Rewards";
+import Dashboard from '@/components/layout/Dashboard'
+
+
 
 function App() {
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-4">
-      <Button>Default Button</Button>
-      <Button variant="destructive">Delete</Button>
-      <Button variant="outline">Outline</Button>
-      <Button variant="secondary">Secondary</Button>
-      <Card className="w-64">
-        <div className="p-4">
-          <h2 className="text-lg font-semibold mb-2">Card Title</h2>
-          <p className="text-sm text-muted-foreground">This is a description inside the card.</p>
-        </div>
-      </Card>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={<Navigate to="/dashboard/rewards" replace />}
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        >
+          <Route path="rewards" element={<Rewards />} />
+          <Route path="home" element={<div>Home (Coming Soon)</div>} />
+          <Route path="discover" element={<div>Discover (Coming Soon)</div>} />
+          <Route path="library" element={<div>Library (Coming Soon)</div>} />
+          <Route
+            path="tech-stack"
+            element={<div>Tech Stack (Coming Soon)</div>}
+          />
+          <Route
+            path="subscriptions"
+            element={<div>Subscriptions (Coming Soon)</div>}
+          />
+          <Route path="settings" element={<div>Settings (Coming Soon)</div>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
