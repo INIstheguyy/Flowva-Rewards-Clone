@@ -2,7 +2,7 @@ import { Menu, Bell } from "lucide-react";
 
 export default function Header({ onMenuClick, title, subtitle }) {
   return (
-    <header className="sticky top-0 z-30  border-slate-200">
+    <header className="sticky top-0 z-30 bg-slate-50 pt-6  border-slate-200">
       <div className="flex items-center gap-6 px-6 py-4">
         {/* Hamburger (mobile only) */}
         <button
@@ -14,7 +14,7 @@ export default function Header({ onMenuClick, title, subtitle }) {
 
         {/* Title & Subtitle */}
         <div className="flex-1 min-w-0">
-          <h1 className="text-2xl lg:text-3xl font-bold text-slate-900 truncate">
+          <h1 className="text-2xl lg:text-3xl font-[400] text-slate-900 truncate">
             {title}
           </h1>
           {subtitle && (

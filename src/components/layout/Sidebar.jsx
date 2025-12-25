@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '@/context/AuthContext'
 import { Home, Compass, BookOpen, Layers, CreditCard, Gift, Settings } from 'lucide-react'
+import flowva from '@/assets/images/flowva_logo-xVpZI3-U.png';
 
 const navItems = [
   { name: 'Home', path: '/dashboard/home', icon: Home },
@@ -23,17 +24,19 @@ export default function Sidebar({ isOpen, onClose }) {
       <aside
         className={`
           fixed top-0 left-0 z-50 h-full w-64 bg-white border-r border-slate-200
-          transition-transform duration-300 ease-in-out
+          transition-transform duration-300 ease-in-out flex flex-col 
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
           lg:translate-x-0
         `}
       >
+        
         {/* Logo */}
-        <div className="flex items-center gap-3 p-6 border-b border-slate-200">
-          <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
-            <span className="text-white text-xl">🌊</span>
+        <div className="flex items-center gap-3 p-6 ">
+          <div className="w-[65%]  flex items-center justify-center">
+            {/* <span className="text-white text-xl">🌊</span> */}
+            <img src={flowva} alt="" />
           </div>
-          <span className="text-xl font-bold text-purple-600">Flowva</span>
+          {/* <span className="text-xl font-bold text-purple-600">Flowva</span> */}
           
           {/* Close button (mobile only) */}
           <button

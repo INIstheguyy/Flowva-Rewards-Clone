@@ -63,7 +63,7 @@ export default function Dashboard() {
           subtitle={currentPage.subtitle}
         />
 
-        <main className="p-6">
+        <main className="p-4">
           <Outlet />
         </main>
       </div>
