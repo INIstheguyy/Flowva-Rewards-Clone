@@ -18,7 +18,7 @@ export default function RewardCard({ reward, userPoints, onClaim }) {
   }
 
   return (
-    <div className="bg-white rounded-lg p-6 shadow-sm border border-slate-200 flex flex-col">
+    <div className="bg-white rounded-lg p-6 shadow-md border border-slate-200 flex flex-col card-hover">
       {/* Icon */}
       <div className="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto">
         {reward.icon}

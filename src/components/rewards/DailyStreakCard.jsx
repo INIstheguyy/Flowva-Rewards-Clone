@@ -10,19 +10,19 @@ export default function DailyStreakCard({
   canClaim,
 }) {
   return (
-    <div className="bg-white rounded-2xl shadow-sm border  border-slate-100">
-      <div className="bg-[#eef2ff] rounded-[12px_12px_0px_0px] p-3 flex items-center gap-2 mb-4">
-        <div className="w-8 h-8  rounded-full flex items-center justify-center">
+    <div className="bg-white rounded-xl shadow-md border border-slate-100 card-hover">
+      <div className="bg-[#eef2ff] rounded-t-xl px-4 py-3 flex items-center gap-2">
+        <div className="w-6 h-6 rounded-full flex items-center justify-center">
           <span className="text-blue-600">
-            <Calendar />
+            <Calendar size={20} />
           </span>
         </div>
-        <h3 className="font-semibold text-slate-900">Daily Streak</h3>
+        <h3 className="font-semibold text-sm text-slate-900">Daily Streak</h3>
       </div>
 
-      <div className="p-3 flex flex-col ">
-        <div className="text-left mb-6">
-          <div className="text-4xl font-[900] text-purple-600 mb-2">
+      <div className="px-4 py-3 flex flex-col">
+        <div className="text-center mb-4">
+          <div className="text-3xl font-bold text-purple-600 mb-1">
             {streak?.current_streak || 0} day
             {streak?.current_streak !== 1 ? "s" : ""}
           </div>
@@ -30,7 +30,7 @@ export default function DailyStreakCard({
         </div>
 
         {/* Days of week */}
-        <div className="flex justify-center gap-2 mb-3">
+        <div className="flex justify-center gap-1.5 mb-3">
           {daysOfWeek.map((day, index) => {
             const isToday = index + 1 === new Date().getDay();
 
@@ -38,7 +38,7 @@ export default function DailyStreakCard({
               <div
                 key={day}
                 className={`
-                w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium bg-slate-100
+                w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium bg-slate-100
                 ${isToday ? " ring-2 ring-purple-600" : " text-slate-400"}
               `}
               >
@@ -47,7 +47,7 @@ export default function DailyStreakCard({
             );
           })}
         </div>
-        <p className="text-sm text-slate-600 text-center mb-2">
+        <p className="text-xs text-slate-600 text-center mb-3">
           Check in daily to earn +5 points
         </p>
         <Button

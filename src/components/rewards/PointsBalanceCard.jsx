@@ -6,21 +6,20 @@ export default function PointsBalanceCard({ points = 0 }) {
   const progress = (points / nextMilestone) * 100;
 
   return (
-    <div className="bg-white rounded-2xl  shadow-sm border border-slate-100">
-      <div className="bg-[#eef2ff] rounded-[12px_12px_0px_0px] p-3 flex items-center gap-2 mb-4">
-        <div className=" w-8 h-8  rounded-full flex items-center justify-center">
+    <div className="bg-white rounded-xl shadow-md border border-slate-100 card-hover">
+      <div className="bg-[#eef2ff] rounded-t-xl px-4 py-3 flex items-center gap-2">
+        <div className="w-6 h-6 rounded-full flex items-center justify-center">
           <span className="text-purple-600">
-            <LucideAward />
+            <LucideAward size={20} />
           </span>
         </div>
-        <h3 className="font-semibold text-slate-900">Points Balance</h3>
+        <h3 className="font-semibold text-sm text-slate-900">Points Balance</h3>
       </div>
 
-      <div className="p-3">
-        <div className="flex py-3 items-baseline justify-between gap-2 mb-4">
-          <span className="text-5xl font-bold text-purple-600">{points}</span>
-          {/* <span className="text-2xl text-yellow-500">🪙</span> */}
-          <img className='w-12 h-12 mr-7' src={gold} alt="Gold Coin" />
+      <div className="px-4 py-3">
+        <div className="flex items-center justify-between gap-2 mb-3">
+          <span className="text-4xl font-bold text-purple-600">{points}</span>
+          <img className='w-10 h-10' src={gold} alt="Gold Coin" />
         </div>
         <div className="space-y-2">
           <div className="flex justify-between text-sm">

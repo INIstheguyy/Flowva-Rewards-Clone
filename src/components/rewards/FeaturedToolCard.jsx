@@ -4,33 +4,32 @@ import { Calendar1Icon, Gift, User, UserPlus } from "lucide-react";
 
 export default function FeaturedToolCard({ onClaim, hasClaimed }) {
   return (
-    <div className=" rounded-2xl shadow-md  text-slate-600 relative overflow-hidden">
-      <div className="bg-gradient-to-br flex justify-between align-middle gap-4 from-purple-600 to-blue-400 text-white p-3">
-        <div className="flex flex-col gap-4">
-          <div className="w-fit top-4  bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium">
+    <div className="rounded-xl shadow-md text-slate-600 relative overflow-hidden card-hover">
+      <div className="bg-gradient-to-br flex justify-between items-start gap-3 from-purple-600 to-blue-400 text-white p-4">
+        <div className="flex flex-col gap-2">
+          <div className="w-fit bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded-full text-xs font-medium">
             Featured
           </div>
-          <div className="flex justify-between mb-2">
-            <h3 className="text-xl font-bold ">Top Tool Spotlight</h3>
-            {/* <img className="w-16 h-16 rounded-full" src={reclaim} alt="Reclaim" /> */}
+          <div className="flex justify-between">
+            <h3 className="text-lg font-bold">Top Tool Spotlight</h3>
           </div>
-          <p className="text-xl font-bold ">Reclaim</p>
+          <p className="text-base font-semibold">Reclaim</p>
         </div>
         <div className="h-full my-auto">
-          <img className="rounded-full w-[64px] h-full" src={reclaim} alt="" />
+          <img className="rounded-full w-14 h-14" src={reclaim} alt="" />
         </div>
       </div>
 
-      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 mb-6 ">
-        <div className="flex items-start gap-3">
-          <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-            <Calendar1Icon className="text-purple-500" />
+      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+        <div className="flex items-start gap-2">
+          <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+            <Calendar1Icon size={18} className="text-purple-500" />
           </div>
           <div>
-            <h4 className="font-semibold mb-1">
+            <h4 className="font-semibold text-sm mb-1">
               Automate and Optimize Your Schedule
             </h4>
-            <p className="text-sm ">
+            <p className="text-xs leading-relaxed">
               Reclaim.ai is an AI-powered calendar assistant that automatically
               schedules your tasks, meetings, and breaks to boost productivity.
               Free to try — earn Flowva Points when you sign up!
@@ -38,24 +37,24 @@ export default function FeaturedToolCard({ onClaim, hasClaimed }) {
           </div>
         </div>
       </div>
-      <hr />
-      <div className="flex justify-between gap-3 px-3 py-1">
+      <div className="border-t border-white/20 mt-3"></div>
+      <div className="flex justify-between gap-2 p-3">
         <Button 
         onClick={() => window.open('https://reclaim.ai/', '_blank')}
-        className="w-fit bg-purple-600 hover:bg-purple-700 rounded-3xl">
-          <UserPlus size={18} /> <span className="ml-4"></span> Sign up
+        className="text-xs px-3 py-1.5 h-auto bg-purple-600 hover:bg-purple-700 rounded-full">
+          <UserPlus size={14} className="mr-1" /> Sign up
         </Button>
         <Button  
           onClick={onClaim}
           disabled={hasClaimed}
-        className="w-fit bg-gradient-to-br from-purple-600 to-pink-400 rounded-3xl">
+        className="text-xs px-3 py-1.5 h-auto bg-gradient-to-br from-purple-600 to-pink-400 rounded-full">
           {hasClaimed ? (
-            <span className="flex items-center">
-              <Gift size={18} /> Claimed
+            <span className="flex items-center gap-1">
+              <Gift size={14} /> Claimed
             </span>
           ) : (
-            <span className="flex items-center">
-              <Gift size={18} /> Claim 50 pts
+            <span className="flex items-center gap-1">
+              <Gift size={14} /> Claim 50 pts
             </span>
           )}
         </Button>

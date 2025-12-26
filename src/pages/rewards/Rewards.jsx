@@ -151,7 +151,7 @@ export default function Rewards() {
       {activeTab === "earn" && (
         <div className="space-y-8">
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 border-l-4 border-purple-600 pl-4">
+            <h2 className="text-xl font-bold text-slate-900 mb-3 border-l-4 border-purple-600 pl-3">
               Your Rewards Journey
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -167,45 +167,45 @@ export default function Rewards() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 border-l-4 border-purple-600 pl-4">
+            <h2 className="text-xl font-bold text-slate-900 mb-3 border-l-4 border-purple-600 pl-3">
               Earn More Points
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <ReferralCard  />
               <ShareStackCard />
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 border-l-4 border-purple-600 pl-4">
+            <h2 className="text-xl font-bold text-slate-900 mb-3 border-l-4 border-purple-600 pl-3">
               Refer & Earn
             </h2>
-            <div className="bg-white rounded-lg shadow-sm border border-slate-200">
-              <div className="bg-violet-50 flex items-center gap-4 p-4">
-                <Users2 size={24} className="text-purple-600" />
+            <div className="bg-white rounded-lg shadow-md border border-slate-200 card-hover">
+              <div className="bg-violet-50 flex items-center gap-3 px-4 py-3">
+                <Users2 size={20} className="text-purple-600" />
                 <div>
-                  <h3 className="font-semibold text-lg text-slate-900">Share Your Link</h3>
-                  <p className="text-sm text-slate-600">
+                  <h3 className="font-semibold text-base text-slate-900">Share Your Link</h3>
+                  <p className="text-xs text-slate-600">
                     Invite friends and earn 25 points when they join!
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4 p-6 ">
+              <div className="flex gap-4 px-6 py-4">
                 <div className="flex-1 text-center">
-                  <div className="text-3xl font-bold text-purple-600">
+                  <div className="text-2xl font-bold text-purple-600">
                     {profile?.total_referrals || 0}
                   </div>
-                  <div className="text-sm text-slate-600">Referrals</div>
+                  <div className="text-xs text-slate-600">Referrals</div>
                 </div>
                 <div className="flex-1 text-center">
-                  <div className="text-3xl font-bold text-purple-600">0</div>
-                  <div className="text-sm text-slate-600">Points Earned</div>
+                  <div className="text-2xl font-bold text-purple-600">0</div>
+                  <div className="text-xs text-slate-600">Points Earned</div>
                 </div>
               </div>
 
-              <div className="p-6 space-y-3 bg-purple-50 mx-4 rounded-xl">
-                <p className="text-sm font-medium  text-slate-700">
+              <div className="px-4 py-3 space-y-2 bg-purple-50 mx-4 rounded-lg">
+                <p className="text-xs font-medium text-slate-700">
                   Your personal referral link:
                 </p>
                 <div className="flex gap-2">
@@ -213,7 +213,7 @@ export default function Rewards() {
                     type="text"
                     readOnly
                     value={`https://app.flowvahub.com/signup?ref=${profile?.referral_code}`}
-                    className="flex-1 px-3 py-2  rounded-md text-sm bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="flex-1 px-3 py-1.5 rounded-md text-xs bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
                   />
                   <button
                     onClick={() => {
@@ -222,25 +222,25 @@ export default function Rewards() {
                       );
                       alert("Link copied!");
                     }}
-                    className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors"
+                    className="px-3 py-1.5 text-xs bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors"
                   >
                     Copy
                   </button>
                 </div>
               </div>
 
-              <div className="flex gap-4 p-2 justify-center ">
-                <button className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center transition-colors">
-                  <FaFacebook className="text-white" size={20} />
+              <div className="flex gap-3 px-6 py-4 justify-center">
+                <button className="w-9 h-9 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center transition-colors">
+                  <FaFacebook className="text-white" size={16} />
                 </button>
-                <button className="w-10 h-10 rounded-full bg-black hover:bg-slate-800 flex items-center justify-center transition-colors">
-                  <FaXTwitter className="text-white" size={20} />
+                <button className="w-9 h-9 rounded-full bg-black hover:bg-slate-800 flex items-center justify-center transition-colors">
+                  <FaXTwitter className="text-white" size={16} />
                 </button>
-                <button className="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-800 flex items-center justify-center transition-colors">
-                  <FaLinkedin className="text-white" size={20} />
+                <button className="w-9 h-9 rounded-full bg-blue-700 hover:bg-blue-800 flex items-center justify-center transition-colors">
+                  <FaLinkedin className="text-white" size={16} />
                 </button>
-                <button className="w-10 h-10 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center transition-colors">
-                  <FaWhatsapp className="text-white" size={20} />
+                <button className="w-9 h-9 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center transition-colors">
+                  <FaWhatsapp className="text-white" size={16} />
                 </button>
               </div>
             </div>
@@ -251,7 +251,7 @@ export default function Rewards() {
       {/* Redeem Rewards Tab */}
       {activeTab === "redeem" && (
         <div>
-          <h2 className="text-2xl font-bold text-slate-900 mb-4 border-l-4 border-purple-600 pl-4">
+          <h2 className="text-xl font-bold text-slate-900 mb-3 border-l-4 border-purple-600 pl-3">
             Redeem Your Points
           </h2>
 
