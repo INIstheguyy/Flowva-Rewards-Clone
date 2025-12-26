@@ -2,7 +2,7 @@ import { useState, useContext } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { AuthContext } from '@/context/AuthContext'
 import { supabase } from '@/lib/supabase'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button.jsx'
 import { Eye, EyeOff } from 'lucide-react'
 import flowvaLogo from '@/assets/images/flowva_logo-xVpZI3-U.png'
 
