@@ -91,12 +91,12 @@ export default function Sidebar({ isOpen, onClose }) {
             </div>
           </div>
           
-          <button
+          {/* <button
             onClick={signOut}
             className="w-full mt-3 px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
           >
             Sign Out
-          </button>
+          </button> */}
         </div>
       </aside>
     </>

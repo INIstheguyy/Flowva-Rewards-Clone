@@ -7,7 +7,7 @@ export default function ReferralCard({ onClick }) {
       className="bg-white rounded-lg shadow-sm border border-slate-200 hover:border-purple-500 transition-colors w-full text-left overflow-hidden"
     >
       <div className="bg-white p-4 max-h-[100px]">
-        <div className="flex items-start gap-3">
+        <div className="flex items-center gap-3">
           <div className="bg-purple-100 rounded-lg p-2 flex-shrink-0">
             <Star className="w-6 h-6 text-purple-600" />
           </div>

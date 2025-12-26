@@ -30,6 +30,7 @@ export default function Rewards() {
   const [hasClaimed, setHasClaimed] = useState(false);
 
   const { data: profile, isLoading: profileLoading } = useProfile();
+  // eslint-disable-next-line no-unused-vars
   const { data: rewards, isLoading: rewardsLoading } = useRewards();
   const { data: streak, claimStreak, isClaiming } = useDailyStreak();
   const { mutate: claimReward, isPending: isClaimingReward } = useClaimReward();
@@ -170,7 +171,7 @@ export default function Rewards() {
               Earn More Points
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <ReferralCard onClick={() => alert("Referral modal coming soon!")} />
+              <ReferralCard  />
               <ShareStackCard />
             </div>
           </section>
@@ -180,7 +181,7 @@ export default function Rewards() {
               Refer & Earn
             </h2>
             <div className="bg-white rounded-lg shadow-sm border border-slate-200">
-              <div className="bg-purple-50 flex items-center gap-4 p-4">
+              <div className="bg-violet-50 flex items-center gap-4 p-4">
                 <Users2 size={24} className="text-purple-600" />
                 <div>
                   <h3 className="font-semibold text-lg text-slate-900">Share Your Link</h3>
@@ -190,7 +191,7 @@ export default function Rewards() {
                 </div>
               </div>
 
-              <div className="flex gap-4 p-6 border-b border-slate-200">
+              <div className="flex gap-4 p-6 ">
                 <div className="flex-1 text-center">
                   <div className="text-3xl font-bold text-purple-600">
                     {profile?.total_referrals || 0}
@@ -203,8 +204,8 @@ export default function Rewards() {
                 </div>
               </div>
 
-              <div className="p-6 space-y-3">
-                <p className="text-sm font-medium text-slate-700">
+              <div className="p-6 space-y-3 bg-purple-50 mx-4 rounded-xl">
+                <p className="text-sm font-medium  text-slate-700">
                   Your personal referral link:
                 </p>
                 <div className="flex gap-2">
@@ -212,7 +213,7 @@ export default function Rewards() {
                     type="text"
                     readOnly
                     value={`https://app.flowvahub.com/signup?ref=${profile?.referral_code}`}
-                    className="flex-1 px-3 py-2 border border-slate-300 rounded-md text-sm bg-slate-50"
+                    className="flex-1 px-3 py-2  rounded-md text-sm bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
                   />
                   <button
                     onClick={() => {
@@ -228,7 +229,7 @@ export default function Rewards() {
                 </div>
               </div>
 
-              <div className="flex gap-4 p-4 justify-center border-t border-slate-200">
+              <div className="flex gap-4 p-2 justify-center ">
                 <button className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center transition-colors">
                   <FaFacebook className="text-white" size={20} />
                 </button>
